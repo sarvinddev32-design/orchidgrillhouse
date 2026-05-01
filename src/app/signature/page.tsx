@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -42,8 +43,8 @@ export default function SignaturePage() {
   const mobileMenuOverlayRef = useRef<HTMLButtonElement | null>(null);
   const menuTimelineRef = useRef<gsap.core.Timeline | null>(null);
   const pageRef = useRef<HTMLDivElement | null>(null);
-  const imgRef1 = useRef<HTMLImageElement | null>(null);
-  const imgRef2 = useRef<HTMLImageElement | null>(null);
+  const imgRef1 = useRef<HTMLDivElement | null>(null);
+  const imgRef2 = useRef<HTMLDivElement | null>(null);
 
   useLayoutEffect(() => {
     if (!mobileMenuRef.current) {
@@ -237,10 +238,11 @@ export default function SignaturePage() {
         />
 
         <section className="relative h-[60vh] w-full overflow-hidden">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1544025162-d76694265947?w=1600&q=80"
             alt="Signature hero"
-            className="h-full w-full object-cover object-center"
+            fill
+            className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-black/65" />
           <div className="pointer-events-none absolute inset-0 -rotate-180 bg-gradient-to-t from-[#09392d] to-transparent" />
@@ -276,12 +278,14 @@ export default function SignaturePage() {
 
         <section className="w-full">
           <div className="relative h-[50vw] min-h-[280px] overflow-hidden md:h-[70vh]">
-            <img
-              ref={imgRef1}
-              src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=1600&q=80"
-              alt="Lebanese Shawarma"
-              className="sig-reveal-image h-full w-full object-cover object-center"
-            />
+            <div ref={imgRef1} className="sig-reveal-image h-full w-full">
+              <Image
+                src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=1600&q=80"
+                alt="Lebanese Shawarma"
+                fill
+                className="object-cover object-center"
+              />
+            </div>
             <div className="absolute inset-0 bg-black/20" />
             <div className="absolute right-5 top-8 border border-white/40 px-4 py-2 text-[10px] uppercase tracking-[0.4em] text-white md:right-12 md:top-12">
               Signature Wrap
@@ -344,12 +348,14 @@ export default function SignaturePage() {
 
         <section className="w-full">
           <div className="relative h-[50vw] min-h-[280px] overflow-hidden md:h-[70vh]">
-            <img
-              ref={imgRef2}
-              src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=1600&q=80"
-              alt="Chicken Shawaya"
-              className="sig-reveal-image h-full w-full object-cover object-center"
-            />
+            <div ref={imgRef2} className="sig-reveal-image h-full w-full">
+              <Image
+                src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=1600&q=80"
+                alt="Chicken Shawaya"
+                fill
+                className="object-cover object-center"
+              />
+            </div>
             <div className="absolute inset-0 bg-black/25" />
             <div className="absolute left-5 top-8 border border-white/40 px-4 py-2 text-[10px] uppercase tracking-[0.4em] text-white md:left-12 md:top-12">
               Chef Special

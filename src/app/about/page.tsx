@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { Navbar } from "@/app/components/Navbar";
@@ -121,10 +122,11 @@ export default function AboutPage() {
         />
 
         <section className="relative h-[55vh] w-full overflow-hidden">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80"
             alt="About Orchid hero"
-            className="h-full w-full object-cover object-center"
+            fill
+            className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-black/60" />
           <div className="pointer-events-none absolute inset-0 -rotate-180 bg-gradient-to-t from-[#09392d] to-transparent" />
@@ -155,9 +157,11 @@ export default function AboutPage() {
 
         <section className="flex min-h-[580px] w-full flex-col md:flex-row">
           <div className="md:w-1/2">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80"
               alt="How Orchid Grill House began"
+              width={1200}
+              height={900}
               className="h-[300px] w-full object-cover md:min-h-[580px] md:h-full"
             />
           </div>
@@ -220,9 +224,11 @@ export default function AboutPage() {
 
         <section className="bg-[#1a3a2e] px-5 py-24 sm:px-8 md:px-20">
           <div className="flex flex-col items-center gap-16 md:flex-row">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80"
               alt="Chef Karim Mansour portrait"
+              width={800}
+              height={1000}
               className="h-[300px] w-full shrink-0 object-cover object-top md:h-[520px] md:w-[420px]"
             />
             <div className="max-w-lg">

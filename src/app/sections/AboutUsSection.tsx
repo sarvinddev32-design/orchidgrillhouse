@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -52,9 +53,11 @@ export function AboutUsSection() {
 
         <div className="mt-12 flex flex-col gap-10 md:flex-row">
           <div className="relative md:w-3/5">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80"
               alt="Restaurant interior dining ambience"
+              width={1200}
+              height={900}
               className="h-[480px] w-full object-cover object-center lg:h-[500px]"
             />
             <div

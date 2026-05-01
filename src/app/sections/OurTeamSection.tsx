@@ -46,13 +46,6 @@ const teamMembers = [
   },
 ];
 
-const stripImages = [
-  "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=80",
-  "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1200&q=80",
-  "https://images.unsplash.com/photo-1514517220017-8ce97a34a7b6?w=1200&q=80",
-  "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1200&q=80",
-];
-
 const trustItems = [
   "10+ Years Culinary Experience",
   "Authentic Lebanese Techniques",

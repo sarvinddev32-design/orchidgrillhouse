@@ -1,11 +1,15 @@
+import Image from "next/image";
+
 export function MissionVisionSection() {
   return (
     <section className="w-full">
       <div className="flex min-h-[500px] flex-col md:flex-row">
         <div className="min-h-[300px] md:min-h-[500px] md:w-1/2">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80"
             alt="Restaurant table setting"
+            width={1200}
+            height={900}
             className="h-full w-full object-cover object-center"
           />
         </div>
@@ -22,9 +26,11 @@ export function MissionVisionSection() {
 
       <div className="flex min-h-[500px] flex-col md:flex-row-reverse">
         <div className="min-h-[300px] md:min-h-[500px] md:w-1/2">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80"
             alt="Lebanese dishes spread"
+            width={1200}
+            height={900}
             className="h-full w-full object-cover object-center"
           />
         </div>

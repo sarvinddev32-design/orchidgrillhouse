@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 import "swiper/css";
@@ -87,7 +88,13 @@ export function ReviewsSection() {
                 <div>
                   <div className="mb-6 flex items-center gap-4">
                     <div className="h-12 w-12 overflow-hidden rounded-full">
-                      <img src={item.avatar} alt={item.name} className="h-full w-full object-cover" />
+                      <Image
+                        src={item.avatar}
+                        alt={item.name}
+                        width={48}
+                        height={48}
+                        className="h-full w-full object-cover"
+                      />
                     </div>
                     <div>
                       <p className="text-sm font-medium tracking-wide text-[#1a3a2e]">{item.name}</p>

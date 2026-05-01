@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { CTASection } from "@/app/sections/CTASection";
@@ -392,10 +393,11 @@ export default function MenuPage() {
           menuTimelineRef={menuTimelineRef}
         />
         <section className="relative h-[45vh] w-full overflow-hidden">
-          <img
+          <Image
             src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80"
             alt="Orchid Grill House menu hero"
-            className="h-full w-full object-cover object-center"
+            fill
+            className="object-cover object-center"
           />
           <div className="pointer-events-none absolute inset-0 -rotate-180 bg-gradient-to-t from-[#09392d] to-transparent" />
           <div className="absolute inset-0 flex items-center justify-center px-5 text-center md:px-0">
@@ -462,9 +464,11 @@ export default function MenuPage() {
                           activeItemName === item.name ? "md:w-[160px]" : ""
                         }`}
                       >
-                        <img
+                        <Image
                           src={item.image}
                           alt={item.name}
+                          width={600}
+                          height={400}
                           className={`h-full w-full object-cover object-center transition-transform duration-700 ease-out ${
                             activeItemName === item.name ? "scale-100" : "scale-110"
                           }`}

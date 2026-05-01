@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function FeaturedProductsSection() {
   return (
     <section className="bg-[#a54933] px-12 py-24 md:px-20" style={{ fontFamily: '"bricolage-grotesque", "Bricolage Grotesque", sans-serif' }}>
@@ -9,9 +11,11 @@ export function FeaturedProductsSection() {
 
         <div className="group flex min-h-[420px] flex-col items-stretch md:min-h-[460px] md:flex-row">
           <div className="overflow-hidden md:w-[55%]">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?w=1200&q=80"
               alt="Lebanese Shawarma"
+              width={1200}
+              height={900}
               className="h-[260px] w-full object-cover object-center transition-transform duration-700 group-hover:scale-105 md:h-full"
             />
           </div>
@@ -63,9 +67,11 @@ export function FeaturedProductsSection() {
             </a>
           </div>
           <div className="order-1 overflow-hidden md:order-2 md:w-[55%]">
-            <img
+            <Image
               src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=1200&q=80"
               alt="Chicken Shawaya"
+              width={1200}
+              height={900}
               className="h-[260px] w-full object-cover object-center transition-transform duration-700 group-hover:scale-105 md:h-full"
             />
           </div>

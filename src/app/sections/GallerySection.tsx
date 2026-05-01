@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -56,10 +57,11 @@ export function GallerySection() {
                 className="!w-[88vw] sm:!w-[70vw] lg:!w-[60vw]"
               >
                 <div className="relative h-[60vh] overflow-hidden md:h-[75vh]">
-                  <img
+                  <Image
                     src={src}
                     alt={`Moment ${i + 1}`}
-                    className="h-full w-full object-cover object-center"
+                    fill
+                    className="object-cover object-center"
                     draggable={false}
                   />
                 </div>
