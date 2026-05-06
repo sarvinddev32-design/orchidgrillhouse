@@ -3,6 +3,7 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 
 type SmoothScrollProps = {
   children: ReactNode;

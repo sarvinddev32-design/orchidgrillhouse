@@ -175,6 +175,7 @@ export function HeroSection() {
         <Navbar
           navItems={navItems}
           isScrolled={isScrolled}
+          isMobileMenuOpen={isMobileMenuOpen}
           activeNavHref={activeNavHref}
           setIsMobileMenuOpen={setIsMobileMenuOpen}
           setActiveNavHref={setActiveNavHref}

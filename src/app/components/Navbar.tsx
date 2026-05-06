@@ -14,6 +14,7 @@ type NavItem = {
 type NavbarProps = {
   navItems: NavItem[];
   isScrolled: boolean;
+  isMobileMenuOpen: boolean;
   activeNavHref: string;
   setIsMobileMenuOpen: Dispatch<SetStateAction<boolean>>;
   setActiveNavHref: Dispatch<SetStateAction<string>>;
@@ -25,6 +26,7 @@ type NavbarProps = {
 export function Navbar({
   navItems,
   isScrolled,
+  isMobileMenuOpen,
   activeNavHref,
   setIsMobileMenuOpen,
   setActiveNavHref,
@@ -34,11 +36,12 @@ export function Navbar({
 }: NavbarProps) {
   return (
     <div
-      className={`fixed left-0 right-0 top-0 z-50 flex h-[80px] items-center justify-between w-full bg-[#F5F1EA] md:h-[80px] lg:pl-[20px] lg:pr-7 ${
+      data-lenis-prevent
+      className={`fixed left-0 right-0 top-0 z-50 flex h-[80px] w-full items-center justify-between bg-[#F5F1EA] md:h-[80px] lg:pl-[20px] lg:pr-7 ${
         isScrolled ? "border-b border-[#ccc]" : ""
       }`}
     >
-      <div className="logo">
+      <div className="logo min-w-0 max-w-[58%] shrink md:max-w-none">
         <Link
           href="/"
           aria-label="Orchid Grill House Home"
@@ -55,23 +58,27 @@ export function Navbar({
           />
         </Link>
       </div>
-      <div className="menu">
+      <div className="menu flex shrink-0 items-center">
         <button
           ref={mobileMenuOverlayRef}
           type="button"
           aria-label="Close menu overlay"
           onClick={() => setIsMobileMenuOpen(false)}
-          className="invisible fixed inset-0 z-40 bg-black/40 md:hidden"
+          className={`fixed inset-0 z-40 bg-black/40 md:hidden ${
+            isMobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+          }`}
         />
         <ul
           ref={mobileMenuRef}
-          className="fixed bottom-0 left-0 right-0 top-0 z-50 flex w-full -translate-x-full flex-col flex-wrap items-start gap-4 bg-white p-10 space-y-5 will-change-transform md:relative md:inset-auto md:w-auto md:max-w-none md:translate-x-0 md:flex md:flex-row md:items-center md:space-y-0 md:bg-[#F5F1EA] md:p-0 sm:gap-7"
+          className={`fixed bottom-0 left-0 right-0 top-0 z-50 flex w-full -translate-x-full flex-col flex-wrap items-start gap-4 space-y-5 bg-white p-10 will-change-transform sm:gap-7 md:relative md:inset-auto md:w-auto md:max-w-none md:translate-x-0 md:flex md:flex-row md:items-center md:space-y-0 md:bg-[#F5F1EA] md:p-0 ${
+            isMobileMenuOpen ? "pointer-events-auto" : "pointer-events-none md:pointer-events-auto"
+          }`}
         >
           <button
             type="button"
             aria-label="Close menu"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border bg-[#eee] p-2 text-base font-medium text-[#111] transition-colors hover:text-[#a54933] md:hidden"
+            className="absolute right-4 top-4 flex h-11 min-h-[44px] w-11 min-w-[44px] touch-manipulation items-center justify-center rounded-full border bg-[#eee] p-2 text-base font-medium text-[#111] transition-colors hover:text-[#a54933] md:hidden"
           >
             <X className="h-6 w-6" />
           </button>
@@ -93,7 +100,7 @@ export function Navbar({
             </li>
           ))}
         </ul>
-        <div className="mobile-menu pr-4 md:hidden">
+        <div className="mobile-menu relative z-[60] pr-4 md:hidden">
           <button
             type="button"
             aria-label="Open menu"
@@ -106,7 +113,7 @@ export function Navbar({
                 return next;
               });
             }}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#09392d] p-3 text-base font-medium text-white transition-colors hover:text-[#a54933]"
+            className="flex h-11 min-h-[44px] w-11 min-w-[44px] touch-manipulation items-center justify-center rounded-full bg-[#09392d] p-3 text-base font-medium text-white transition-colors hover:text-[#a54933]"
           >
             <div className="flex h-6 w-6 flex-col items-center justify-center space-y-2">
               <div className="line1 h-0.5 w-full bg-white"></div>

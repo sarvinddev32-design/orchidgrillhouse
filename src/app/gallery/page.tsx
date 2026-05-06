@@ -190,6 +190,7 @@ export default function GalleryPage() {
         <Navbar
           navItems={navItems}
           isScrolled={true}
+          isMobileMenuOpen={isMobileMenuOpen}
           activeNavHref={activeNavHref}
           setIsMobileMenuOpen={setIsMobileMenuOpen}
           setActiveNavHref={setActiveNavHref}

@@ -229,6 +229,7 @@ export default function SignaturePage() {
         <Navbar
           navItems={navItems}
           isScrolled={true}
+          isMobileMenuOpen={isMobileMenuOpen}
           activeNavHref={activeNavHref}
           setIsMobileMenuOpen={setIsMobileMenuOpen}
           setActiveNavHref={setActiveNavHref}

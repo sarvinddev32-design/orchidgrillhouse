@@ -1,4 +1,5 @@
 import "./globals.css";
+import { SmoothScroll } from "@/app/components/SmoothScroll";
 
 export default function RootLayout({
   children,
@@ -7,7 +8,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/ciw0wkm.css" />
+      </head>
+      <body>
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }

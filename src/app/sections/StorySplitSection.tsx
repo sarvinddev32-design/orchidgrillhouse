@@ -16,20 +16,20 @@ export function StorySplitSection() {
         </div>
 
         <div className="flex min-h-[600px] flex-col justify-center bg-[#f5f0e8] p-14 md:w-1/2 md:p-20">
-          <p className="mb-6 mb-3 text-lg font-medium uppercase text-[#a54933]" style={{ fontFamily: '"bricolage-grotesque", "Bricolage Grotesque", sans-serif' }}>Our Story</p>
+          <p className="mb-6 text-lg font-medium uppercase text-[#a54933]" style={{ fontFamily: '"bricolage-grotesque", "Bricolage Grotesque", sans-serif' }}>Our Story</p>
 
-          <h2 className="mb-8 text-4xl font-light leading-tight tracking-wide text-[#1a3a2e] md:text-5xl">
+          <h2 className="mb-8 text-4xl font-light leading-tight tracking-wide text-[#1a3a2e] md:text-5xl" style={{ fontFamily: '"bricolage-grotesque", "Bricolage Grotesque", sans-serif' }}>
             <span className="block">A Taste of Lebanon,</span>
             <span className="block">Refined for the</span>
             <span className="block">Modern Table.</span>
           </h2>
 
-          <p className="mb-4 max-w-md text-sm font-medium leading-relaxed text-[#1a3a2e]/70">
+          <p className="mb-4 max-w-md text-sm font-medium leading-relaxed text-[#1a3a2e]/70" style={{ fontFamily: '"bricolage-grotesque", "Bricolage Grotesque", sans-serif' }}>
             Born from a passion for authentic Lebanese flavors, Orchid Grill House has grown into
             one of Dubai&apos;s most beloved dining destinations - where heritage meets refinement on
             every plate.
           </p>
-          <p className="max-w-md text-sm font-medium leading-relaxed text-[#1a3a2e]/70">
+          <p className="max-w-md text-sm font-medium leading-relaxed text-[#1a3a2e]/70" style={{ fontFamily: '"bricolage-grotesque", "Bricolage Grotesque", sans-serif' }}>
             From our signature shawarma to slow-charred grills, every dish is crafted with
             hand-selected ingredients and techniques passed down through generations, elevated for
             the discerning palate.
